@@ -25,3 +25,28 @@ M 2.4 - 12km ESE of Carlisle, Kentucky || 896
 ```
 
 # Technologies used
+* Kotlin with coroutines (JVM, Java 11)
+* Koin (DI)
+* GSON (JSON processing)
+* Logback (logging)
+* Tests
+  * TestNG
+  * AssertJ
+  * Mockk
+* Code quality
+  * Detekt (linkter)
+  * Jacoco (coverage)
+
+# Run instructions
+To compile and run this program you need to have Java JDK 11.
+```
+git clone https://github.com/mastrodaro/nearby-earthquakes
+cd nearby-earthquakes
+gradle.bat fatJar # for Linux: ./gradle fatJar
+cd build\libs # for Linux: cd build/libs
+java -jar nearby-earthquakes-1.0-SNAPSHOT.jar
+```
+To run tests:
+```
+gradle.bat test # for Linux: ./gradle test
+```

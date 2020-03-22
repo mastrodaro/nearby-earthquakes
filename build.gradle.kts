@@ -15,7 +15,6 @@ object Version {
     const val LOGBACK_VERSION = "1.2.3"
     const val TESTNG_VERSION = "7.1.0"
     const val ASSERTJ_VERSION = "3.12.2"
-    const val MOCKITO_KOTLIN_VERSION = "2.2.0"
     const val MOCKK_VERSION = "1.9.3"
     const val GSON_VERSION = "2.8.6"
 }
