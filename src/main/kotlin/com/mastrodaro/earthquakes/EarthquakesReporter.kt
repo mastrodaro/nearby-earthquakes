@@ -27,7 +27,12 @@ class EarthquakesReporter(
             provider.getLastEarthquakes()
         }
         val coords = reader.readCoords()
-        val nearbyEarthquakes = getNearbyEarthquakes(lastEarthquakes.await(), coords)
+        val nearbyEarthquakes = run {
+            if (!lastEarthquakes.isCompleted) {
+                println("Processing... please wait.")
+            }
+            getNearbyEarthquakes(lastEarthquakes.await(), coords)
+        }
         return printer.print(nearbyEarthquakes)
     }
 
