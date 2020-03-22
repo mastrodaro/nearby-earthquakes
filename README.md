@@ -36,6 +36,7 @@ M 2.4 - 12km ESE of Carlisle, Kentucky || 896
 * Code quality
   * Detekt (linkter)
   * Jacoco (coverage)
+* Gradle (bundler)
 
 # Run instructions
 To compile and run this program you need to have Java JDK 11.
