@@ -29,7 +29,6 @@
     <logger name="com.mastrodaro" level="DEBUG" />
 
     <root level="DEBUG">
-        <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE-ROLLING" />
     </root>
 </configuration>

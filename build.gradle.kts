@@ -1,20 +1,27 @@
 import Build_gradle.Version.ASSERTJ_VERSION
+import Build_gradle.Version.GSON_VERSION
 import Build_gradle.Version.KOIN_VERSION
+import Build_gradle.Version.KOTLIN_COROUTINES_VERSION
 import Build_gradle.Version.LOGBACK_VERSION
+import Build_gradle.Version.MOCKK_VERSION
 import Build_gradle.Version.TESTNG_VERSION
 import io.gitlab.arturbosch.detekt.Detekt
 import org.gradle.api.JavaVersion.VERSION_11
 
 object Version {
     const val KOTLIN_VERSION = "1.3.70"
+    const val KOTLIN_COROUTINES_VERSION = "1.3.5"
     const val KOIN_VERSION = "2.1.4"
     const val LOGBACK_VERSION = "1.2.3"
     const val TESTNG_VERSION = "7.1.0"
     const val ASSERTJ_VERSION = "3.12.2"
+    const val MOCKITO_KOTLIN_VERSION = "2.2.0"
+    const val MOCKK_VERSION = "1.9.3"
+    const val GSON_VERSION = "2.8.6"
 }
 
 val jacocoMinCoverage = "0.9"
-val jacocoExcludedClasses = listOf("**/*/Application*")
+val jacocoExcludedClasses = listOf("**/*/Application*", "**/*/io/InputReader*")
 
 plugins {
     kotlin("jvm") version "1.3.70"
@@ -37,10 +44,13 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", KOTLIN_COROUTINES_VERSION)
     implementation("org.koin", "koin-core", KOIN_VERSION)
     implementation("ch.qos.logback", "logback-classic", LOGBACK_VERSION)
+    implementation("com.google.code.gson", "gson", GSON_VERSION)
     testImplementation("org.testng", "testng", TESTNG_VERSION)
     testImplementation("org.assertj", "assertj-core", ASSERTJ_VERSION)
+    testImplementation("io.mockk", "mockk", MOCKK_VERSION)
     testImplementation("org.koin", "koin-test", KOIN_VERSION)
 }
 
@@ -62,6 +72,7 @@ tasks {
         useTestNG()
         dependsOn(":detekt")
         jacoco
+        finalizedBy(jacocoTestCoverageVerification)
         finalizedBy(jacocoTestReport)
     }
     jacocoTestReport {
