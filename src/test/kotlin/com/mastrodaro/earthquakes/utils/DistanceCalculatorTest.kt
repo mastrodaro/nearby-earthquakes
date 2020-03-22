@@ -1,18 +1,11 @@
 package com.mastrodaro.earthquakes.utils
 
-import com.mastrodaro.earthquakes.KoinTestInitializer.initializeKoinContext
 import org.assertj.core.api.Assertions.assertThat
-import org.koin.test.KoinTest
-import org.koin.test.inject
-import org.testng.annotations.BeforeClass
 import org.testng.annotations.DataProvider
 import org.testng.annotations.Test
 
-class DistanceCalculatorTest : KoinTest {
-    private val calculator by inject<DistanceCalculator>()
-
-    @BeforeClass
-    fun init() = initializeKoinContext()
+class DistanceCalculatorTest {
+    private val calculator = DistanceCalculator()
 
     @DataProvider
     fun getCoords() = arrayOf(

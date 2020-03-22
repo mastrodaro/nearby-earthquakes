@@ -1,17 +1,10 @@
 package com.mastrodaro.earthquakes.io
 
-import com.mastrodaro.earthquakes.KoinTestInitializer
 import org.assertj.core.api.Assertions.assertThat
-import org.koin.test.KoinTest
-import org.koin.test.inject
-import org.testng.annotations.BeforeClass
 import org.testng.annotations.Test
 
-class ConsolePrinterTest : KoinTest {
-    private val printer by inject<ConsolePrinter>()
-
-    @BeforeClass
-    fun init() = KoinTestInitializer.initializeKoinContext()
+class ConsolePrinterTest {
+    private val printer = ConsolePrinter()
 
     @Test
     fun `Collected earthquakes should be printed in correct format`() {

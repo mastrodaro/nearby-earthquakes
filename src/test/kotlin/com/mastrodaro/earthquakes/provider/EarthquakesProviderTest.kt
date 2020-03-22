@@ -2,18 +2,12 @@ package com.mastrodaro.earthquakes.provider
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
-import com.mastrodaro.earthquakes.KoinTestInitializer
+import com.mastrodaro.earthquakes.gson
 import org.assertj.core.api.Assertions.assertThat
-import org.koin.test.KoinTest
-import org.koin.test.inject
-import org.testng.annotations.BeforeClass
 import org.testng.annotations.Test
 
-class EarthquakesProviderTest : KoinTest {
-    private val provider by inject<EarthquakesProvider>()
-
-    @BeforeClass
-    fun init() = KoinTestInitializer.initializeKoinContext()
+class EarthquakesProviderTest {
+    private val provider = EarthquakesProvider(HttpClient(), gson)
 
     @Test
     fun `Earthquakes provider should be able to get last earthquakes`() {

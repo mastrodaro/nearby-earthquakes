@@ -68,7 +68,9 @@ tasks {
         this.jvmTarget = "11"
     }
     test {
-        useTestNG()
+        useTestNG {
+            parallel = "methods"
+        }
         dependsOn(":detekt")
         jacoco
         finalizedBy(jacocoTestCoverageVerification)
