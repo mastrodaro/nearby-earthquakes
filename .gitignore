@@ -24,6 +24,7 @@ hs_err_pid*
 
 # IntelliJ IDEA
 .gradle
+!gradle/wrapper/gradle-wrapper.jar
 .iml
 .idea/*
 !.idea/dictionaries
