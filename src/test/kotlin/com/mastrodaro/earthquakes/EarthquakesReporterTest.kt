@@ -31,7 +31,7 @@ class EarthquakesReporterTest {
         "M 1.0 - 22km N of Ridgecrest, CA || 12466",
         "M 1.1 - 23km N of Ridgecrest, CA || 12467",
         "M 1.2 - 20km ESE of Little Lake, CA || 12468",
-        "M 1.7 - 13km SSW of Olancha, CA || 12488"
+        "M 1.7 - 13km SSW of Olancha, CA || 12489"
     )
 
     init {
