@@ -22,16 +22,14 @@ val appModule = module {
     single { EarthquakesProvider(get(), gson) }
     single { HttpClient() }
     single { DistanceCalculator() }
+    single { EarthquakesReporter(get(), get(), get(), get()) }
 }
 
 class Application : KoinComponent {
-    private val reader by inject<ConsoleReader>()
-    private val provider by inject<EarthquakesProvider>()
-    private val calculator by inject<DistanceCalculator>()
-    private val printer by inject<ConsolePrinter>()
+    private val reporter by inject<EarthquakesReporter>()
 
     fun run() = runBlocking {
-        EarthquakesReporter(reader, provider, calculator, printer).start()
+        reporter.start()
     }
 }
 
