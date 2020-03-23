@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/mastrodaro/nearby-earthquakes.svg?branch=master)](https://travis-ci.com/mastrodaro/nearby-earthquakes)
+![GitHub](https://img.shields.io/github/license/mastrodaro/nearby-earthquakes)
+
 # Reason
 Locate nearby earthquakes
 
