@@ -71,7 +71,6 @@ tasks {
         useTestNG {
             parallel = "methods"
         }
-        dependsOn(":detekt")
         jacoco
         finalizedBy(jacocoTestCoverageVerification)
         finalizedBy(jacocoTestReport)
